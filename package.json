@@ -1,23 +1,29 @@
 {
-  "name": "zeppelin_update",
+  "name": "Nauh-Ico-Demo",
   "version": "1.0.0",
   "description": "",
-  "main": "",
+  "main": "./src/index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
+    "start": "webpack-dev-server ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Roman Storm",
+  "author": "Huan le <lehuan94cntt@gmsil.com>",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^6.0.0",
     "openzeppelin-solidity": "1.10.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
     "truffle": "^4.1.11",
     "truffle-hdwallet-provider": "0.0.5"
   },
   "devDependencies": {
-    "truffle-flattener": "^1.2.6"
+    "truffle-flattener": "^1.2.6",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.7"
   }
 }
