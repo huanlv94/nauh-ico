@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server ./src/index.js",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Huan le <lehuan94cntt@gmsil.com>",
@@ -15,6 +16,7 @@
   "dependencies": {
     "dotenv": "^6.0.0",
     "openzeppelin-solidity": "1.10.0",
+    "raw-loader": "^0.5.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "truffle": "^4.1.11",
