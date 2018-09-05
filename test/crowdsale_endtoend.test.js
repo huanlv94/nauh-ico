@@ -1,6 +1,5 @@
-const WeatherCrowdsale = artifacts.require('WeatherCrowdsale');
+const NauhCrowdsale = artifacts.require('NauhCrowdsale');
 
-
-contract('AllowanceCrowdsale', function ([_, investor, wallet, purchaser, tokenWallet]) {
+contract('NauhCrowdsale', function ([_, investor, wallet, purchaser, tokenWallet]) {
 
 });
