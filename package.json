@@ -7,8 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "start": "webpack-dev-server ./src/index.js",
-    "build": "webpack",
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Huan le <lehuan94cntt@gmsil.com>",
@@ -19,14 +19,17 @@
     "raw-loader": "^0.5.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-scripts": "^1.1.5",
     "truffle": "^4.1.11",
     "truffle-hdwallet-provider": "0.0.5"
   },
   "devDependencies": {
+    "@babel/core": "^7",
     "@babel/plugin-transform-runtime": "^7.0.0",
-    "babel-core": "^6.26.3",
     "babel-loader": "7",
     "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
     "json-loader": "^0.5.7",
     "style-loader": "^0.23.0",
