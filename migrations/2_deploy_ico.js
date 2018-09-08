@@ -32,7 +32,6 @@ module.exports = async function(deployer, network, accounts) {
     console.log('aa', deployedCrowdsale.address);
     await deployedToken.transferOwnership(deployedCrowdsale.address);
     console.log('Contracts deployed: \n', deployedCrowdsale.address, deployedToken.address)
-    return true;
 
   })
 
