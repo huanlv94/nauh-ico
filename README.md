@@ -1,4 +1,4 @@
-# Sample crowdsale starter project
+# Nauh crowdsale starter project
 
 This is a sample project for getting started with a custom crowdsale contract with [OpenZeppelin](https://openzeppelin.org/). It is an introductory example to learn how to use OpenZeppelin. Note that this project has not been audited and hence **is not intended for production use**.
 
@@ -19,6 +19,13 @@ The `contracts` folder has a sample crowdsale and token, with explicit points on
 6- Build contract module for JS FW: `dapp-scratch build NauhCrowdsale --contract './contracts/NauhCrowdsale.sol'`
 
 7- Flatten your contract: `https://github.com/poanetwork/solidity-flattener`
+
+## Run ICO
+1- Deploy to network: `truffle migrate`
+
+2- `yarn start` or `npm start`
+
+3- Visit `http://localhost:8080`
 
 ## Tests
 

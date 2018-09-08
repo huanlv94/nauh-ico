@@ -11,7 +11,7 @@ class Accounts extends Component {
     const { accounts } = this.props
     let accountsItems
     if (accounts) {
-      accountsItems = accounts.slice(1,5).map(account => {
+      accountsItems = accounts.map(account => {
         return (
           <AccountItem onBuy={this.buyNauhCoin.bind(this)} key={account.number} account={account} />
         )
@@ -19,7 +19,6 @@ class Accounts extends Component {
     }
     return (
       <div className="Accounts">
-        <h2>Participants</h2>
         {accountsItems}
       </div>
     )
