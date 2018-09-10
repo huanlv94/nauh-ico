@@ -17,7 +17,7 @@ class About extends Component {
                 <p className="animation" data-animation="fadeInUp" data-animation-delay="0.4s">Cryptocash is one of the most transformative technologies since the invention of the Internet. Cryptocash stands firmly in support of financial freedom and the liberty that Bitcoin provides globally for anyone to voluntarily participate in a permissionless and decentralized network. </p>
                 <p className="animation" data-animation="fadeInUp" data-animation-delay="0.8s">which empowers people to not be marginalized by governments and financial institutions. Bitcoin is freedom. </p>
               </div>
-              <a href="https://www.youtube.com/watch?v=ZE2HxTmxfrI" className="btn btn-default btn-radius video animation" data-animation="fadeInUp" data-animation-delay="1s">Let's Start <i className="ion-ios-arrow-thin-right" /></a>
+              <a target='_blank' href="https://www.youtube.com/watch?v=ZE2HxTmxfrI" className="btn btn-default btn-radius video animation" data-animation="fadeInUp" data-animation-delay="1s">Let's Start <i className="ion-ios-arrow-thin-right" /></a>
             </div>
           </div>
         </div>

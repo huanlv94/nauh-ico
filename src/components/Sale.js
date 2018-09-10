@@ -17,15 +17,15 @@ class Sale extends Component {
             <div className="col-lg-3">
               <div className="pr_box">
                 <h6 className="animation" data-animation="fadeInUp" data-animation-delay="0.2s">Starting time :</h6>
-                <p className="animation" data-animation="fadeInUp" data-animation-delay="0.4s">Apr 23, 2018 (Mon 9:00 AM)</p>
+                <p className="animation" data-animation="fadeInUp" data-animation-delay="0.4s">Jul 23, 2018 (Mon 9:00 AM)</p>
               </div>
               <div className="pr_box">
                 <h6 className="animation" data-animation="fadeInUp" data-animation-delay="0.6s">Ending time :</h6>
-                <p className="animation" data-animation="fadeInUp" data-animation-delay="0.8s">Jun 18, 2018 (Mon 11:00 PM)</p>
+                <p className="animation" data-animation="fadeInUp" data-animation-delay="0.8s">Dec 18, 2018 (Mon 11:00 PM)</p>
               </div>
               <div className="pr_box">
                 <h6 className="animation" data-animation="fadeInUp" data-animation-delay="1s">Tokens exchange rate</h6>
-                <p className="animation" data-animation="fadeInUp" data-animation-delay="1.2s">1 ETH = 650 ICC, 1 BTC = 1940 ICC</p>
+                <p className="animation" data-animation="fadeInUp" data-animation-delay="1.2s">1 ETH = 10000 NAUH, 1 BTC = 20000 NAUH</p>
               </div>
             </div>
             <div className="col-lg-6">
@@ -35,8 +35,8 @@ class Sale extends Component {
                     <div className="tk_countdown_time animation" data-animation="fadeInUp" data-animation-delay="1.2s" data-time="2018/09/06 00:00:00" />
                     <div className="progress animation" data-animation="fadeInUp" data-animation-delay="1.3s">
                       <div className="progress-bar progress-bar-striped gradient" role="progressbar" aria-valuenow={46} aria-valuemin={0} aria-valuemax={100} style={{ width: '46%' }}> 46% </div>
-                      <span className="progress_label bg-white" style={{ left: '30%' }}> <strong> 46,000 ICC </strong></span>
-                      <span className="progress_label bg-white" style={{ left: '75%' }}> <strong> 90,000 ICC </strong></span>
+                      <span className="progress_label bg-white" style={{ left: '30%' }}> <strong> 46,000 NAUH </strong></span>
+                      <span className="progress_label bg-white" style={{ left: '75%' }}> <strong> 100,000 NAUH </strong></span>
                       <span className="progress_min_val">Sale Raised</span>
                       <span className="progress_max_val">Soft-caps</span>
                     </div>
@@ -58,7 +58,7 @@ class Sale extends Component {
               </div>
               <div className="pr_box">
                 <h6 className="animation" data-animation="fadeInUp" data-animation-delay="0.6s">Number of tokens for sale</h6>
-                <p className="animation" data-animation="fadeInUp" data-animation-delay="0.8s">900,000 ICC (9%)</p>
+                <p className="animation" data-animation="fadeInUp" data-animation-delay="0.8s">1,000,000 NAUH (9%)</p>
               </div>
               <div className="pr_box">
                 <h6 className="animation" data-animation="fadeInUp" data-animation-delay="1s">Acceptable Currency :</h6>
