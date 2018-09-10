@@ -1,15 +1,16 @@
 # base image
 FROM node:9.6.1
 
+RUN mkdir -p /home/nauh-ico
+ADD . /home/nauh-ico
 # set working directory
-RUN mkdir /usr/src/app
-WORKDIR /usr/src/app
+WORKDIR /home/nauh-ico
 
 # add `/usr/src/app/node_modules/.bin` to $PATH
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
+ENV PATH /home/nauh-ico/node_modules/.bin:$PATH
 
+RUN cd /home/luna
 # install and cache app dependencies
-COPY package.json /usr/src/app/package.json
 RUN npm install --silent
 
 # start app
