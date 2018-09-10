@@ -9,7 +9,7 @@ WORKDIR /home/nauh-ico
 # add `/usr/src/app/node_modules/.bin` to $PATH
 ENV PATH /home/nauh-ico/node_modules/.bin:$PATH
 
-RUN cd /home/luna
+RUN cd /home/nauh-ico
 # install and cache app dependencies
 RUN npm install --silent
 
