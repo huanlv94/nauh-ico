@@ -14,4 +14,4 @@ RUN cd /home/nauh-ico
 RUN yarn install --silent
 
 # start app
-CMD ["yarn", "start"]
+CMD ["yarn", "run:product"]
