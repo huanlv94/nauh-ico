@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
-const HtmlWebPackPlugin = require("html-webpack-plugin")
+const HtmlWebPackPlugin = require('html-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/templates/index.html",
@@ -17,10 +18,25 @@ const jQueryPlugin = new webpack.ProvidePlugin({
 module.exports = {
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "build_webpack"),
+    path: path.resolve(__dirname, "dist"),
     filename: "app.js"
   },
   plugins: [htmlPlugin, jQueryPlugin],
+  optimization: {
+    minimizer: [
+      // we specify a custom UglifyJsPlugin here to get source maps in production
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        uglifyOptions: {
+          compress: false,
+          ecma: 6,
+          mangle: true
+        },
+        sourceMap: true
+      })
+    ]
+  },
   module: {
     rules: [
       {
@@ -29,11 +45,11 @@ module.exports = {
       },
       {
         test: /\.(png|jpg)$/,
-        loader: 'url-loader'
+        loader: "url-loader"
       },
       {
         test: /\.scss$/,
-        use: [ "style-loader", "css-loader", "sass-loader"]
+        use: ["style-loader", "css-loader", "sass-loader"]
       },
       {
         test: /\.json$/,
