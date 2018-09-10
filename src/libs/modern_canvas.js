@@ -5,8 +5,14 @@
 		window.addEventListener('load', function () {
 			var w = window.innerWidth,
 			h = window.innerHeight,
-			canvas = document.getElementById('banner_canvas'),
-			ctx = canvas.getContext('2d'),
+			canvas = document.getElementById('banner_canvas')
+
+			if (canvas == null) {
+				console.log('NOT CANVAS DEFINED')
+				return false
+			}
+
+			var ctx = canvas.getContext('2d'),
 			rate = 60,
 			arc = 200,
 			time,
@@ -16,7 +22,7 @@
 			parts = new Array,
 			colors = ['#FFC56E','#FF6CC6','#4241B8','#F69040','#0EADC9'];
 			var mouse = { x: 0, y: 0 };
-			
+
 			canvas.setAttribute('width',w);
 			canvas.setAttribute('height',h);
 			

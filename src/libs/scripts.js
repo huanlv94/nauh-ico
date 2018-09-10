@@ -1,9 +1,3 @@
-/*===================================
-Author       : Bestwebcreator.
-Template Name: Cryptocash - ICO & Cryptocurrency Landing Page HTML + Admin Dashboard Template
-Version      : 1.5
-===================================*/
-
 (function($) {
 	'use strict';
 	
@@ -108,7 +102,8 @@ Version      : 1.5
 	
 	//Language Select Dropdown
 	$(document).ready(function() {
-	$("#lng_select").msDropdown();
+		if ($("#lng_select").val() !== undefined)
+			$("#lng_select").msDropdown();
 	})
    
 	/*===================================*
