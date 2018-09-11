@@ -15,7 +15,7 @@ class UserManager extends Component {
 
     this.state = {
       web3: null,
-      nauhPrice: 0.00001
+      nauhPrice: 0.01
     };
   }
 
@@ -53,11 +53,11 @@ class UserManager extends Component {
   }
 
   getBalance(address) {
-    const { web3 } = this.state;
-    let balance = 0;
+    const { web3 } = this.state
+    let balance = 0
     web3.eth.getBalance(address, function(error, wei) {
       if (!error) {
-        balance = web3.fromWei(wei, "ether");
+        balance = web3.utils.fromWei(wei, "ether")
       }
     });
 
@@ -78,15 +78,9 @@ class UserManager extends Component {
       ).then(balances => {
         // Store accounts in state
         let _accounts = accounts.map((account, idx) => {
-          let ethBlc = this.getBalance(account);
-          return {
-            name: "Your account number " + idx,
-            number: account,
-            nauhBalance: Math.round(
-              web3.fromWei(balances[idx] / nauhPrice, "ether")
-            ),
-            ethBalance: ethBlc
-          };
+          let ethBlc = this.getBalance(account)
+          let nauhBalance = Math.round(web3.utils.fromWei((balances[idx] / nauhPrice).toString(), "ether"))
+          return { name: "Your account number " + idx, number: account, nauhBalance: nauhBalance, ethBalance: ethBlc };
         });
 
         this.setState({ accounts: _accounts });
@@ -100,7 +94,7 @@ class UserManager extends Component {
     nauhCrowdsaleInstance
       .sendTransaction({
         from: account,
-        value: web3.toWei(nauhPrice, "ether"),
+        value: web3.utils.toWei(nauhPrice.toString(), "ether"),
         gas: "220000"
       })
       .then(

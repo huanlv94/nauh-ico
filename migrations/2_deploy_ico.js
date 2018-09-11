@@ -20,7 +20,7 @@ module.exports = async function(deployer, network, accounts) {
     // uint256 _openingTime,
     // uint256 _closingTime,
     // uint256 _cap
-    const rate = 10000; // 1 eth = 10000 NAUH tokens
+    const rate = 100; // 1 eth = 100 NAUH tokens
     const wallet = accounts[0];
     const timeNow = Math.floor(Date.now() / 1000);
     const openingTime = timeNow  + duration.seconds(30);
