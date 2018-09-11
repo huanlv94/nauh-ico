@@ -40,6 +40,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
     "dotenv": "^6.0.0",
+    "ethereumjs-wallet": "^0.6.2",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "json-loader": "^0.5.7",
@@ -51,8 +52,10 @@
     "style-loader": "^0.23.0",
     "transform-runtime": "^0.0.0",
     "truffle-flattener": "^1.2.6",
+    "truffle-wallet-provider": "^0.0.5",
     "url-loader": "^1.1.1",
     "waypoints": "^4.0.1",
+    "web3": "^1.0.0-beta.36",
     "webpack": "^4.17.2",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.7"
