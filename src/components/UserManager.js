@@ -52,40 +52,38 @@ class UserManager extends Component {
     });
   }
 
-  getBalance(address) {
-    const { web3 } = this.state
-    let balance = 0
+  getEthBalance(address) {
+    const { web3 } = this.state;
+    let balance = 0;
     web3.eth.getBalance(address, function(error, wei) {
       if (!error) {
         balance = web3.utils.fromWei(wei, "ether")
       }
-    });
-
-    return Math.round(balance.toString());
+    })
+  
+    return parseFloat(balance).toFixed(4)
   }
 
   fetchAccounts() {
-    const { web3, nauhInstance, nauhPrice } = this.state;
+    const { web3, nauhInstance, nauhPrice } = this.state
     // Get accounts and their balance
     web3.eth.getAccounts((error, accounts) => {
       // Fetch NAUH balance for all accounts
-      Promise.all(
-        accounts.map(account =>
+      Promise.all(accounts.map(account =>
           nauhInstance.balanceOf(account).then(balance => {
-            return balance.toString(10);
+            return balance.toString(10)
           })
-        )
-      ).then(balances => {
+        )).then(balances => {
         // Store accounts in state
         let _accounts = accounts.map((account, idx) => {
-          let ethBlc = this.getBalance(account)
+          let ethBlc = this.getEthBalance(account)
           let nauhBalance = Math.round(web3.utils.fromWei((balances[idx] / nauhPrice).toString(), "ether"))
-          return { name: "Your account number " + idx, number: account, nauhBalance: nauhBalance, ethBalance: ethBlc };
-        });
+          return { name: "Your account number:", number: account, nauhBalance: nauhBalance, ethBalance: ethBlc }
+        })
 
-        this.setState({ accounts: _accounts });
-      });
-    });
+        this.setState({ accounts: _accounts })
+      })
+    })
   }
 
   handleBuyNAUH(account) {
@@ -108,7 +106,7 @@ class UserManager extends Component {
   }
 
   render() {
-    const { accounts } = this.state
+    const { accounts } = this.state;
 
     return (
       <main className="container">
