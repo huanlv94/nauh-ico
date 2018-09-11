@@ -50,11 +50,15 @@ const Wallet = require('ethereumjs-wallet')
 const parsePrivateKey = privateKey => new Buffer(privateKey, "hex")
 
 const getWalle = function (network) {
-  let ropstenPrivateKey, wallet;
+  let wallet;
   switch (network) {
     case 'ropsten':
-      ropstenPrivateKey = parsePrivateKey(process.env.ROPSTEN_PRIVATE_KEY)
+      let ropstenPrivateKey = parsePrivateKey(process.env.ROPSTEN_PRIVATE_KEY)
       wallet = Wallet.fromPrivateKey(ropstenPrivateKey)
+      break
+    case 'rinkeby':
+      let rinkebyPrivateKey = parsePrivateKey(process.env.RINKEBY_PRIVATE_KEY);
+      wallet = Wallet.fromPrivateKey(rinkebyPrivateKey);
       break
     default:
       break
@@ -77,13 +81,19 @@ module.exports = {
     },
     ropsten: {
       provider: infuraProvider("ropsten"),
+      gas: 4600000,
+      gasPrice: 100000000000,
+      network_id: "3"
+    },
+    rinkeby: {
+      provider: infuraProvider("rinkeby"),
       // You can get the current gasLimit by running
       // truffle deploy --network rinkeby
       // truffle(rinkeby)> web3.eth.getBlock("pending", (error, result) =>
       //   console.log(result.gasLimit))
       gas: 4600000,
       gasPrice: 100000000000,
-      network_id: "3"
+      network_id: "4"
     }
   },
   solc: {
@@ -95,4 +105,4 @@ module.exports = {
   mocha: {
     useColors: true
   }
-}
+};
