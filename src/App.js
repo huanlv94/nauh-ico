@@ -25,7 +25,6 @@ class App extends Component {
             )}
           />
           <Route
-            exact
             path="/buy-demo"
             component={routeProps => (
               <UserManager routeProps={routeProps} {...this.props} />

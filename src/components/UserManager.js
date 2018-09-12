@@ -56,9 +56,8 @@ class UserManager extends Component {
     const { web3 } = this.state;
     let balance = 0;
     web3.eth.getBalance(address, function(error, wei) {
-      if (!error) {
+      if (!error)
         balance = web3.utils.fromWei(wei, "ether")
-      }
     })
   
     return parseFloat(balance).toFixed(4)
@@ -77,10 +76,10 @@ class UserManager extends Component {
         // Store accounts in state
         let _accounts = accounts.map((account, idx) => {
           let ethBlc = this.getEthBalance(account)
-          let nauhBalance = Math.round(web3.utils.fromWei((balances[idx] / nauhPrice).toString(), "ether"))
+          // let nauhBalance = Math.round(web3.utils.fromWei((balances[idx] / nauhPrice).toString(), "ether"))
+          let nauhBalance = parseFloat(web3.utils.fromWei(balances[idx].toString(), "ether")).toFixed(4)
           return { name: "Your account number:", number: account, nauhBalance: nauhBalance, ethBalance: ethBlc }
         })
-
         this.setState({ accounts: _accounts })
       })
     })
