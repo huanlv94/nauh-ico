@@ -24,10 +24,10 @@ class Header extends Component {
                 <li className="animation" data-animation="fadeInDown" data-animation-delay="1.7s"><a className="nav-link page-scroll nav_item" href="#faq">FAQ</a></li>
                 <li className="animation" data-animation="fadeInDown" data-animation-delay="1.8s"><a className="nav-link page-scroll nav_item" href="#contact">Contact</a></li>
               </ul>
-              <ul className="navbar-nav nav_btn align-items-center">
+              {/* <ul className="navbar-nav nav_btn align-items-center">
                 <li className="animation" data-animation="fadeInDown" data-animation-delay="2s"><a className="btn btn-default btn-radius nav_item" href="#">Login</a></li>
                 <li className="animation" data-animation="fadeInDown" data-animation-delay="2.1s"><a className="nav-link nav_item" href="#">Sign Up</a></li>
-              </ul>
+              </ul> */}
             </div>
           </nav>
         </div>
