@@ -1,0 +1,32 @@
+{
+  "name": "nauh-ico-client-app",
+  "description": "",
+  "homepage": "https://nauh-ico.levanhuan.com",
+  "dependencies": {
+    "react": "16.1.1",
+    "react-dom": "16.1.1",
+    "react-router-dom": "4.2.2",
+    "react-scripts": "1.0.10",
+    "react-transition-group": "1.2.1"
+  },
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "bootstrap": "^4.1.3",
+    "jquery": "^3.3.1",
+    "jquery.counterup": "^2.1.0",
+    "magnific-popup": "^1.1.0",
+    "material-ui": "^0.20.2",
+    "owl.carousel": "^2.3.4",
+    "particles.js": "^2.0.0",
+    "popper.js": "^1.14.4",
+    "waypoints": "^4.0.1",
+    "web3": "^1.0.0-beta.36"
+  }
+}
