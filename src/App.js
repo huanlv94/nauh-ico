@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { BrowserRouter,
+import { HashRouter,
 Route, Switch, browserHistory } from 'react-router-dom'
 import Dashboard from './layouts/Dashboard'
 import UserManager from './components/UserManager'
@@ -15,7 +15,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter history={browserHistory}>
+      <HashRouter history={browserHistory}>
         <Switch>
           <Route
             exact
@@ -31,7 +31,7 @@ class App extends Component {
             )}
           />
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
