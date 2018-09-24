@@ -1,10 +1,7 @@
-const jQuery = require('jquery')
-const particlesJS = require('particles.js')
-const location = window.location
+import particlesJS from 'particles.js'
+import jQuery from 'jquery'
 
 (function($) {
-	'use strict';
-	
 	/*===================================*
 	01. LOADING JS
 	/*===================================*/
@@ -20,7 +17,7 @@ const location = window.location
 	// Select all links with hashes
     $('a.page-scroll').on('click', function(event) {
         // On-page links
-        if ( location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname ) {
+        if ( window.location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && window.location.hostname === this.hostname ) {
           // Figure out element to scroll to
           var target = $(this.hash),
               speed= $(this).data("speed") || 800;
@@ -55,8 +52,8 @@ const location = window.location
 	//Show Hide dropdown-menu Main navigation 
 	$( document ).ready( function () {
 		$( '.dropdown-menu a.dropdown-toggler' ).on( 'click', function ( e ) {
-			var $el = $( this );
-			var $parent = $( this ).offsetParent( ".dropdown-menu" );
+			// var $el = $( this );
+			// var $parent = $( this ).offsetParent( ".dropdown-menu" );
 			if ( !$( this ).next().hasClass( 'show' ) ) {
 				$( this ).parents( '.dropdown-menu' ).first().find( '.show' ).removeClass( "show" );
 			}
@@ -475,5 +472,5 @@ const location = window.location
 		$(this).toggleClass("switch-active");
 	});
 			
-})(jQuery);
+});
 
