@@ -6,6 +6,7 @@ import getWeb3 from '../utils/getWeb3'
 // Contracts
 import NauhToken from '../../build/contracts/NauhToken.json'
 import NauhCrowdsale from '../../build/contracts/NauhCrowdsale.json'
+import axios from 'axios'
 
 const contract = require('truffle-contract')
 
@@ -61,6 +62,29 @@ class UserManager extends Component {
     })
   
     return parseFloat(balance).toFixed(4)
+  }
+
+  getEthBalanceFromAPI(address) {
+    // https://api-ropsten.etherscan.io/api?module=account&action=balance&address=0x95fcaf758702247786e30478fff2f089a438e5c9&tag=latest&apikey=G6EK3IGSTSNA5Q9TTCXIHS5GG26T94ZH28
+
+    let params = {
+      module: 'account',
+      action: 'balance',
+      address: address,
+      tag: 'latest',
+      apikey: 'G6EK3IGSTSNA5Q9TTCXIHS5GG26T94ZH28'
+    }
+
+    axios.get('https://api-ropsten.etherscan.io/api', {
+      params: params
+    })
+      .then(function (response) {
+        let { result } = response.data
+        console.log(result)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
   }
 
   fetchAccounts() {
