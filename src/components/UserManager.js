@@ -6,7 +6,9 @@ import getWeb3 from '../utils/getWeb3'
 // Contracts
 import NauhToken from '../../build/contracts/NauhToken.json'
 import NauhCrowdsale from '../../build/contracts/NauhCrowdsale.json'
+import Payment from '../../build/contracts/Payment.json'
 import axios from 'axios'
+// import _ from 'lodash'
 
 const contract = require('truffle-contract')
 
@@ -18,6 +20,26 @@ class UserManager extends Component {
       web3: null,
       nauhPrice: 0.01
     };
+  }
+
+  transferEther(from, dest, amount) {
+    from = this.state.accounts[0].number
+    dest = '0x99461fb7c00d3d1fa5633e11534938f00cd5a786'
+    amount = '0.01'
+
+    const { web3, paymentInstance } = this.state
+
+    paymentInstance.sendTransaction({
+      from: from,
+      dest: dest,
+      value: web3.utils.toWei(amount, "ether"),
+      gas: "220000"
+    }).then(function success(data) {
+        debugger
+      }.bind(this), function failure(error) {
+        console.error(error)
+      }
+    );
   }
 
   componentWillMount() {
@@ -37,20 +59,27 @@ class UserManager extends Component {
   }
 
   setupContracts() {
-    const { web3 } = this.state;
-    let nauhToken = contract(NauhToken);
-    nauhToken.setProvider(web3.currentProvider);
-    let nauhCrowdsale = contract(NauhCrowdsale);
-    nauhCrowdsale.setProvider(web3.currentProvider);
+    const { web3 } = this.state
+    let nauhToken = contract(NauhToken)
+    nauhToken.setProvider(web3.currentProvider)
+    let nauhCrowdsale = contract(NauhCrowdsale)
+    nauhCrowdsale.setProvider(web3.currentProvider)
+    let paymentContract = contract(Payment)
+    paymentContract.setProvider(web3.currentProvider)
 
     nauhCrowdsale.deployed().then(instance => {
-      const nauhCrowdsaleInstance = instance;
-      this.setState({ nauhCrowdsaleInstance });
+      const nauhCrowdsaleInstance = instance
+      this.setState({ nauhCrowdsaleInstance })
       nauhCrowdsaleInstance.token().then(tokenAddress => {
-        this.setState({ nauhInstance: nauhToken.at(tokenAddress) });
+        this.setState({ nauhInstance: nauhToken.at(tokenAddress) })
         this.fetchAccounts();
-      });
-    });
+      })
+    })
+
+    paymentContract.deployed().then(instance => {
+      const paymentInstance = instance
+      this.setState({ paymentInstance })
+    })
   }
 
   getEthBalance(address) {
@@ -140,6 +169,13 @@ class UserManager extends Component {
               accounts={accounts}
             />
           </div>
+          {accounts && accounts.length > 0 &&
+            <button
+              onClick={() => this.transferEther()}
+            >
+              Send
+            </button>
+          }
         </div>
       </main>
     );

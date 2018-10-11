@@ -1,5 +1,6 @@
 var NauhToken = artifacts.require("./NauhToken.sol");
 var NauhCrowdsale = artifacts.require("./NauhCrowdsale.sol");
+var Payment = artifacts.require("./Payment.sol");
 
 const duration = {
   seconds: function (val) { return val; },
@@ -31,7 +32,9 @@ module.exports = async function(deployer, network, accounts) {
     const deployedCrowdsale = await NauhCrowdsale.deployed();
     console.log('aa', deployedCrowdsale.address);
     await deployedToken.transferOwnership(deployedCrowdsale.address);
-    console.log('Contracts deployed: \n', deployedCrowdsale.address, deployedToken.address)
+    await deployer.deploy(Payment);
+    const deployedPayment = await Payment.deployed();
+    console.log('Contracts deployed: \n', deployedCrowdsale.address, deployedToken.address, deployedPayment.address);
 
   })
 
