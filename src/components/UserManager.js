@@ -35,7 +35,6 @@ class UserManager extends Component {
       value: web3.utils.toWei(amount, "ether"),
       gas: "220000"
     }).then(function success(data) {
-        debugger
       }.bind(this), function failure(error) {
         console.error(error)
       }
